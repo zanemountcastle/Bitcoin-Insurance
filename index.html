@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bitcoin Insurance</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
+	<!-- moment.js used to to date arithmetic -->
+	<script src="moment.js"></script>
+	<script>
+		moment().format();
+	</script>
+	<script src="script.js"></script>
+</head>
+<body>
+	<div class="container">
+	    <header>
+	      	<h1>Bitcoin Insurance Calculator</h1>
+	    </header>
+	  	<section id="fetch">
+	      	<input type="text" placeholder="Enter Bitcoin amount: " id="bitcoinAmount" />
+	      	<button id="calculate">Determine my insurance rate</button>
+	  	</section>
+
+	   	<section id="rate">
+	  	</section>
+	</div>
+</body>
+<footer>
+	<p>Powered by <a href="http://www.coindesk.com/price/">CoinDesk</a>
+</footer>
+</html>
