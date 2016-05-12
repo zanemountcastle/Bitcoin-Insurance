@@ -1,22 +1,20 @@
  $(document).ready(function(){
-
+	 $('#rate').html("<h3>Insurance Premium:</h3>");
+	 
 	 var getRate = function(){
 	     //Grab rate and store it in a variable
 	     var bitcoinAmount = $('#bitcoinAmount').val();
 	     //Check for valid input
-	     if($.isNumeric(bitcoinAmount) === false){
+	     if($.isNumeric(bitcoinAmount) === false || bitcoinAmount === ""){
 	     	//If not valid input (not numerical), display validation message
-	    	 $('#rate').html("<h1>Please enter a valid numerical input.</h1>");
+	    	 $('#rate').html("<h3>Please enter a valid numerical input.</h3>");
 	     }
 	     else{
 	     	 //Valid input, proceed to calculation
-	     	 $('#rate').html("<h1>Loading...</h1>");
 	     	 
 	     	 var historic = moment().subtract(3, 'years').calendar();
 			//format date to be readable by CoinDesk API
 	     	 historic = moment(historic).format('YYYY-MM-DD');
-
-	     	 // console.log(moment().subtract(30,));
 
 	     	 var percentChanges = [];
 	     	 //pull previous three years of data from today
@@ -41,16 +39,25 @@
 	     	 	//calculate standardDeviation
 	     	 	var standardDeviation = Math.sqrt(variance,2);
 
-	     	 	// ***************************************************************
-	     	 	// ADD CODE TO COMPUTE INSURANCE RATE FROM STANDARD DEVIATION HERE
-	     	 	// ***************************************************************
+	     	 	//calculate insurance premium from standardDeveiation
+	     	 	var standardDeviation2 = (standardDeviation*100);
+	     	 	var average2 = (average*100);
+
+	     	 	var T = ((Math.sqrt(100-standardDeviation2+average2))+(Math.sqrt(100+standardDeviation2+average2)));
+	     	 	var insurancePremium1 = ((Math.pow(((standardDeviation2+average2-Math.pow((T),2))/((-2)*(T))),2)-100))*(-1);
+	     	 	var insurancePremium2 = ((0.5)*standardDeviation2)+((0.5)*average2);
+
+	     	 	//assumes competition
+	     	 	var thePremium = (((insurancePremium1+insurancePremium2)/2)/100)*bitcoinAmount; 
+
+	     	 	$('#rate').html("<h3>Insurance Premium: " + thePremium.toFixed(2) + " GHS </h3>"); //rounds to two decimal places
 
 	     	 	//tests
-	     	 	console.log(percentChanges);
-	     	 	console.log("average: ", average);
-	     	 	console.log("variance: ", variance);
-	     	 	console.log("standardDeviation: ", standardDeviation);
-
+	     	 	// console.log("premium: ", thePremium);
+	     	 	// console.log(percentChanges);
+	     	 	// console.log("average: ", average);
+	     	 	// console.log("variance: ", variance);
+	     	 	// console.log("standardDeviation: ", standardDeviation);
 			 });
 
 
@@ -90,22 +97,13 @@
 		  			}
 				});
 		     }
-
-	     	 // $('#rate').html("<h2>" "</h2>")
 	     }
 	 };
 
 	 var percentChange = function(x,y){
 	 	return (y-x)/x;
 	 }
-
 	 $('#calculate').click(getRate);
-	 $('#rate').keyup(function(event){
-	 	 if(event.keyCode == 13){
-	    	 getRate();
-	     }
-	 });
-
 });
 
 
