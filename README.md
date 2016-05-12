@@ -1,4 +1,4 @@
-This is a side project based upon a paper written by Dan Mountcastle.
+This project is a collaboration with Dan Mountcastle.
 
 The paper develops a technique for pricing insurance for Bitcoins. In order to maximize the potential for the cryptocurrency in developing countries, a technique must be developed that protects individuals from the volatility of the cryptocurrency. This major disadvantage of Bitcoin prohibits impoverished individuals from investing heavily.
 
