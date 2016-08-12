@@ -12,7 +12,7 @@ In order to maximize the potential for the cryptocurrency in developing countrie
 
 ## Solution
 
-The paper and this script are moves towards a solution to this problem. The insurance rates can be calculated to protect individuals, especially those with limited income, from major negative fluctuation in the worth of their Bitcoins.
+The paper and this script are moves towards a solution to this problem. The insurance rates can be calculated to protect individuals, especially those with limited income, from major negative fluctuations in the worth of their Bitcoins.
 
 Using the CoinBase API for historic Bitcoin prices, the script maintains an up-to-date client-side service for determining Bitcoin Insurance pricing.
 
