@@ -2,6 +2,8 @@
 
 This project establishes a technique for pricing insurance for Bitcoins. The technique was developed by [Dan Mountcastle](https://uk.linkedin.com/in/daniel-mountcastle-16218160). This project is a collaboration with Dan Mountcastle.
 
+For a full economic analysis, please see the original paper [here](https://github.com/zanemountcastle/bitcoin-insurance/blob/master/Remittances%2C%20Cryptocurrency%2C%20and%20Insurance.pdf).
+
 ## Problem
 
 On one hand, a decentralized cryptocurrency shared on a pubic ledger such as [Bitcoin](https://bitcoin.org/en/) offers tremendous potential for individuals in developing countries to store monetary assets. On the other hand, the historic volatility of the currency precludes significant investment in the interest of conservative financial planning.
