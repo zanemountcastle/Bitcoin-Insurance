@@ -1,4 +1,4 @@
-#Bitcoin Insurance
+# Bitcoin Insurance
 
 This project establishes a technique for pricing insurance for Bitcoins. The technique was developed by [Dan Mountcastle](https://uk.linkedin.com/in/daniel-mountcastle-16218160). This project is a collaboration with Dan Mountcastle.
 
